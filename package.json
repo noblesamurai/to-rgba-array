@@ -1,0 +1,46 @@
+{
+  "name": "to-rgba-array",
+  "description": "Convert a variety of formats to an rgba array.",
+  "version": "1.0.0",
+  "author": "Tim Allen <tim@noblesamurai.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "nyc -a -c -r html -r text npm test",
+    "pretest": "semistandard --env mocha",
+    "test": "mocha --recursive test"
+  },
+  "homepage": "https://github.com/noblesamurai/to-rgba-array",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/noblesamurai/to-rgba-array.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noblesamurai/to-rgba-array/issues"
+  },
+  "engines": {
+    "node": "6.x",
+    "npm": "3.x"
+  },
+  "dependencies": {
+    "get-canvas-pixels": "^1.0.0",
+    "isomorphic-canvas": "^0.1.1"
+  },
+  "peerDependencies": {
+    "canvas": "*"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~3.2.0",
+    "nyc": "^10.1.2",
+    "semistandard": "*",
+    "canvas": "*"
+  },
+  "keywords": [],
+  "nyc": {
+    "exclude": [
+      "coverage",
+      "test"
+    ]
+  }
+}
