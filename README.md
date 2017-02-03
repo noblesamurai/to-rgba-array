@@ -6,24 +6,11 @@
 Install the module with: `npm install to-rgba-array`
 
 ```javascript
-var to-rgba-array = require('to-rgba-array');
-to-rgba-array.awesome(); // "hello "
-```
-
-## Documentation
-
-#### .awesome(name)
-
-**Parameter**: `name`
-**Type**: `String`
-**Example**: `Livia`
-
-The 'awesome' method is responsible for showing a name.
-
-How to use this method
-
-```javascript
-to-rgba-array.awesome('livia'); // "hello livia"
+var toRGBAArray = require('to-rgba-array');
+var canvas = new Canvas(200,200);
+to-rgba-array(canvas).then(function(result) {
+  assert(result instanceof Uint8ClampedArray);
+});;
 ```
 
 ## Contributing
