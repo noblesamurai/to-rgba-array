@@ -3,7 +3,7 @@
   "description": "Convert a variety of formats to an rgba array.",
   "version": "1.0.0",
   "author": "Tim Allen <tim@noblesamurai.com>",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "BSD-3-Clause",
   "main": "index.js",
   "scripts": {
     "coverage": "nyc -a -c -r html -r text npm test",
