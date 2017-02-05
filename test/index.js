@@ -30,7 +30,7 @@ describe('to-rgba-array', function () {
     let canvasIterations = range(100).map(() => toRGBAArray(canvas));
     let imageIterations = range(100).map(() => toRGBAArray(png));
     return Promise.all(canvasIterations.concat(imageIterations)).then(function (results) {
-      EP.report(true);
+      //  EP.report(true);
     });
   });
 });

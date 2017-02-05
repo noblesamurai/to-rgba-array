@@ -2,8 +2,8 @@ const Canvas = require('canvas');
 
 const getCanvasPixels = require('get-canvas-pixels');
 const imageType = require('image-type');
-const getPixels = require('get-pixels');
-require('easy-profiler');
+const debug = require('debug')('to-rgba-array');
+// require('easy-profiler');
 
 /*
  * @return Promise<uint8Array>
@@ -13,7 +13,8 @@ module.exports = function (frame) {
   let canvas;
   function setMode (name) {
     mode = name;
-    EP.begin(mode); // profiling
+    debug('to-rgba-array', mode);
+    // EP.begin(mode); // profiling
   }
   if (frame.constructor.name === 'Canvas') {
     setMode('canvas');
@@ -24,11 +25,11 @@ module.exports = function (frame) {
     canvas = imageToCanvas(frame);
   }
   if (!mode) {
-    throw new Error ('unknown input format');
+    throw new Error('unknown input format');
   }
 
   var result = getCanvasPixels(canvas);
-  EP.end(mode);
+  // EP.end(mode);
   return Promise.resolve(result);
 };
 
