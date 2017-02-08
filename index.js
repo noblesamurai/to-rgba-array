@@ -21,7 +21,8 @@ module.exports = function (frame) {
     canvas = frame;
   } else {
     let type = imageType(frame);
-    if (type) setMode('image');
+    if (type) setMode('image')
+    else return Promise.resolve(new Uint8ClampedArray(frame));
     canvas = imageToCanvas(frame);
   }
   if (!mode) {
