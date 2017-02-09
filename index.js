@@ -14,14 +14,13 @@ module.exports = function (frame) {
   function setMode (name) {
     mode = name;
     debug('to-rgba-array', mode);
-    // EP.begin(mode); // profiling
   }
   if (frame.constructor.name === 'Canvas') {
     setMode('canvas');
     canvas = frame;
   } else {
     let type = imageType(frame);
-    if (type) setMode('image')
+    if (type) setMode('image');
     else {
       setMode('buffer');
       return Promise.resolve(new Uint8ClampedArray(frame));
@@ -33,7 +32,6 @@ module.exports = function (frame) {
   }
 
   var result = getCanvasPixels(canvas);
-  // EP.end(mode);
   return Promise.resolve(result);
 };
 
