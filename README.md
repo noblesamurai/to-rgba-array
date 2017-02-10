@@ -24,11 +24,11 @@ toRGBAArray(canvas).then(function(result) {
 ## to-rgba-array
 <a name="exp_module_to-rgba-array--module.exports"></a>
 
-### module.exports(frame) ⇒ <code>Promise.&lt;Uint8Array&gt;</code> ⏏
+### module.exports(frame) ⇒ <code>Promise.&lt;Uint8ClampedArray&gt;</code> ⏏
 Convert an input image into a Uint8ClampedArray containing RGBA pixels.
 
 **Kind**: Exported function
-**Returns**: <code>Promise.&lt;Uint8Array&gt;</code> - The RGBA pixels.
+**Returns**: <code>Promise.&lt;Uint8ClampedArray&gt;</code> - The RGBA pixels.
 
 | Param | Type | Description |
 | --- | --- | --- |
