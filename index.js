@@ -34,8 +34,8 @@ function convert (frame) {
     throw new Error('unknown input format');
   }
 
-  var result = getCanvasPixels(canvas);
-  return Promise.resolve(result);
+  var pixels = getCanvasPixels(canvas);
+  return Promise.resolve(pixels);
 }
 
 function imageToCanvas (frame) {
