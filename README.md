@@ -13,7 +13,7 @@ var toRGBAArray = require('to-rgba-array');
 var assert = require('assert');
 
 var canvas = new Canvas(200,200);
-to-rgba-array(canvas).then(function(result) {
+toRGBAArray(canvas).then(function(result) {
   assert(result instanceof Uint8ClampedArray);
 });;
 ```
