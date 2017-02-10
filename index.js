@@ -1,3 +1,6 @@
+/**
+ * @module to-rgba-array
+ */
 const Canvas = require('canvas');
 
 const getCanvasPixels = require('get-canvas-pixels');
@@ -11,7 +14,7 @@ const debug = require('debug')('to-rgba-array');
  *        (jpeg/png etc) or just RGBA pixels.
  * @returns {Promise<Uint8Array>} The RGBA pixels.
  */
-function convert (frame) {
+module.exports = function (frame) {
   let mode;
   let canvas;
   function setMode (name) {
@@ -40,7 +43,7 @@ function convert (frame) {
 
   var pixels = getCanvasPixels(canvas);
   return Promise.resolve(pixels);
-}
+};
 
 function imageToCanvas (frame) {
   let img = new Canvas.Image();
@@ -50,5 +53,3 @@ function imageToCanvas (frame) {
   ctx.drawImage(img, 0, 0, img.width, img.height);
   return c;
 }
-
-module.exports = convert;
