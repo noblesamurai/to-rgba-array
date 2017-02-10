@@ -18,6 +18,10 @@ function convert (frame) {
     mode = name;
     debug('to-rgba-array', mode);
   }
+  // HACK(tim): not using instanceof b/c sometimes npm has different packages
+  // in different places, esp. if you are using npm link. Using canvas as a
+  // peer dependency attempts to get around this but in practice it is not
+  // working out for me when using npm link.
   if (frame.constructor.name === 'Canvas') {
     setMode('canvas');
     canvas = frame;
