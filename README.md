@@ -2,32 +2,22 @@
 
 > Convert a variety of formats to an rgba array.
 
-## Getting Started
-Install the module with: `npm install to-rgba-array`
+## Purpose
+Basically used to make plugins etc input format agnostic.
+Give it a canvas, an image in a buffer, a buffer with RGBA pixels, and it'll
+ensure you have a `Uint8ClampedArray` out.
 
+## Usage
 ```javascript
 var toRGBAArray = require('to-rgba-array');
+var assert = require('assert');
+
 var canvas = new Canvas(200,200);
 to-rgba-array(canvas).then(function(result) {
   assert(result instanceof Uint8ClampedArray);
 });;
 ```
 
-## Contributing
-
-Please submit all issues and pull requests to the [noblesamurai/to-rgba-array](https://github.com/noblesamurai/to-rgba-array) repository!
-
-## Support
-If you have any problem or suggestion please open an issue [here](https://github.com/noblesamurai/to-rgba-array/issues).
-
-## License
-
-Copyright (c) Noble Samurai Pty Ltd, 2008-2017.  All Rights Reserved.
-
-This software is proprietary to and embodies the confidential technology of
-Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
-software and media is authorised only pursuant to a valid written license from
-Noble Samurai Pty Ltd.  Questions or requests regarding permission may be sent
-by email to legal@noblesamurai.com or by post to PO Box 477, Blackburn Victoria
-3130, Australia.
+## API
+See [here](docs/api.md).
 

@@ -5,10 +5,13 @@ const imageType = require('image-type');
 const debug = require('debug')('to-rgba-array');
 // require('easy-profiler');
 
-/*
- * @return Promise<uint8Array>
+/**
+ * Convert an input image into a Uint8ClampedArray containing RGBA pixels.
+ * @param {Canvas|Buffer} frame The input image.  Buffer can contain an image format
+ *        (jpeg/png etc) or just RGBA pixels.
+ * @returns {Promise<Uint8Array>} The RGBA pixels.
  */
-module.exports = function (frame) {
+function convert (frame) {
   let mode;
   let canvas;
   function setMode (name) {
@@ -33,7 +36,7 @@ module.exports = function (frame) {
 
   var result = getCanvasPixels(canvas);
   return Promise.resolve(result);
-};
+}
 
 function imageToCanvas (frame) {
   let img = new Canvas.Image();
@@ -43,3 +46,5 @@ function imageToCanvas (frame) {
   ctx.drawImage(img, 0, 0, img.width, img.height);
   return c;
 }
+
+module.exports = convert;
