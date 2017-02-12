@@ -1,14 +1,15 @@
 {
   "name": "to-rgba-array",
   "description": "Convert a variety of formats to an rgba array.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "author": "Tim Allen <tim@noblesamurai.com>",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "BSD-3-Clause",
   "main": "index.js",
   "scripts": {
     "coverage": "nyc -a -c -r html -r text npm test",
     "pretest": "semistandard --env mocha",
-    "test": "mocha --recursive test"
+    "test": "mocha --recursive test",
+    "docs": "jsdoc2md index.js"
   },
   "homepage": "https://github.com/noblesamurai/to-rgba-array",
   "repository": {
@@ -23,18 +24,23 @@
     "npm": "3.x"
   },
   "dependencies": {
+    "debug": "^2.6.0",
     "get-canvas-pixels": "^1.0.0",
-    "isomorphic-canvas": "^0.1.1"
+    "get-pixels": "^3.3.0",
+    "image-type": "^3.0.0"
   },
   "peerDependencies": {
     "canvas": "*"
   },
   "devDependencies": {
+    "canvas": "^1.6.2",
     "chai": "~3.5.0",
+    "jsdoc-to-markdown": "^2.0.1",
+    "lodash.range": "^3.2.0",
     "mocha": "~3.2.0",
     "nyc": "^10.1.2",
-    "semistandard": "*",
-    "canvas": "*"
+    "pngjs": "^3.0.0",
+    "semistandard": "*"
   },
   "keywords": [],
   "nyc": {

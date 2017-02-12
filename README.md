@@ -2,45 +2,37 @@
 
 > Convert a variety of formats to an rgba array.
 
-## Getting Started
-Install the module with: `npm install to-rgba-array`
+## Purpose
+Basically used to make plugins etc input format agnostic.
+Give it a canvas, an image in a buffer, a buffer with RGBA pixels, and it'll
+ensure you have a `Uint8ClampedArray` out.
 
+## Usage
 ```javascript
-var to-rgba-array = require('to-rgba-array');
-to-rgba-array.awesome(); // "hello "
+var toRGBAArray = require('to-rgba-array');
+var assert = require('assert');
+
+var canvas = new Canvas(200,200);
+toRGBAArray(canvas).then(function(result) {
+  assert(result instanceof Uint8ClampedArray);
+});;
 ```
 
-## Documentation
+## API
+<a name="module_to-rgba-array"></a>
 
-#### .awesome(name)
+## to-rgba-array
+<a name="exp_module_to-rgba-array--module.exports"></a>
 
-**Parameter**: `name`
-**Type**: `String`
-**Example**: `Livia`
+### module.exports(frame) ⇒ <code>Promise.&lt;Uint8ClampedArray&gt;</code> ⏏
+Convert an input image into a Uint8ClampedArray containing RGBA pixels.
 
-The 'awesome' method is responsible for showing a name.
+**Kind**: Exported function
+**Returns**: <code>Promise.&lt;Uint8ClampedArray&gt;</code> - The RGBA pixels.
 
-How to use this method
+| Param | Type | Description |
+| --- | --- | --- |
+| frame | <code>Canvas</code> &#124; <code>Buffer</code> | The input image.  Buffer can contain an image format        (jpeg/png etc) or just RGBA pixels. |
 
-```javascript
-to-rgba-array.awesome('livia'); // "hello livia"
-```
-
-## Contributing
-
-Please submit all issues and pull requests to the [noblesamurai/to-rgba-array](https://github.com/noblesamurai/to-rgba-array) repository!
-
-## Support
-If you have any problem or suggestion please open an issue [here](https://github.com/noblesamurai/to-rgba-array/issues).
-
-## License
-
-Copyright (c) Noble Samurai Pty Ltd, 2008-2017.  All Rights Reserved.
-
-This software is proprietary to and embodies the confidential technology of
-Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
-software and media is authorised only pursuant to a valid written license from
-Noble Samurai Pty Ltd.  Questions or requests regarding permission may be sent
-by email to legal@noblesamurai.com or by post to PO Box 477, Blackburn Victoria
-3130, Australia.
-
+Note: To regenerate this section from the jsdoc run `npm run docs` and paste
+the output above.
