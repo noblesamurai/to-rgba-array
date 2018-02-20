@@ -20,8 +20,8 @@
     "url": "https://github.com/noblesamurai/to-rgba-array/issues"
   },
   "engines": {
-    "node": "6.x",
-    "npm": "3.x"
+    "node": ">= 6.x < 9",
+    "npm": "5.x"
   },
   "dependencies": {
     "debug": "^2.6.0",
