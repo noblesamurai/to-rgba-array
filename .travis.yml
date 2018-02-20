@@ -8,3 +8,7 @@ node_js:
 cache:
   directories:
     - node_modules
+addons:
+  apt:
+    packages:
+      - libgif-dev
