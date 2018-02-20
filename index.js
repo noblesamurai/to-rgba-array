@@ -12,7 +12,7 @@ const debug = require('debug')('to-rgba-array');
  * Convert an input image into a Uint8ClampedArray containing RGBA pixels.
  * @param {Canvas|Buffer} frame The input image.  Buffer can contain an image format
  *        (jpeg/png etc) or just RGBA pixels.
- * @returns {Promise<Uint8ClampedArray>} The RGBA pixels.
+ * @returns {Uint8ClampedArray} The RGBA pixels.
  */
 module.exports = function (frame) {
   let mode;
@@ -33,7 +33,7 @@ module.exports = function (frame) {
     if (type) setMode('image');
     else {
       setMode('buffer');
-      return Promise.resolve(new Uint8ClampedArray(frame));
+      return new Uint8ClampedArray(frame);
     }
     canvas = imageToCanvas(frame);
   }
@@ -42,7 +42,7 @@ module.exports = function (frame) {
   }
 
   var pixels = getCanvasPixels(canvas);
-  return Promise.resolve(pixels);
+  return pixels;
 };
 
 function imageToCanvas (frame) {

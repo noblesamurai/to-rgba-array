@@ -13,9 +13,8 @@ var toRGBAArray = require('to-rgba-array');
 var assert = require('assert');
 
 var canvas = new Canvas(200,200);
-toRGBAArray(canvas).then(function(result) {
-  assert(result instanceof Uint8ClampedArray);
-});;
+const result = toRGBAArray(canvas);
+assert(result instanceof Uint8ClampedArray);
 ```
 
 ## API
@@ -24,11 +23,11 @@ toRGBAArray(canvas).then(function(result) {
 ## to-rgba-array
 <a name="exp_module_to-rgba-array--module.exports"></a>
 
-### module.exports(frame) ⇒ <code>Promise.&lt;Uint8ClampedArray&gt;</code> ⏏
+### module.exports(frame) ⇒ <code>Uint8ClampedArray</code> ⏏
 Convert an input image into a Uint8ClampedArray containing RGBA pixels.
 
 **Kind**: Exported function
-**Returns**: <code>Promise.&lt;Uint8ClampedArray&gt;</code> - The RGBA pixels.
+**Returns**: <code>Uint8ClampedArray</code> - The RGBA pixels.
 
 | Param | Type | Description |
 | --- | --- | --- |

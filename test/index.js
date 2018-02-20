@@ -31,10 +31,9 @@ describe('to-rgba-array', function () {
     let imageData = new ImageData(new Uint8ClampedArray(testImage), ctx.canvas.width, ctx.canvas.height);
     ctx.putImageData(imageData, 0, 0);
 
-    return toRGBAArray(canvas).then(function (result) {
-      expect(Buffer.from(result).length).to.equal(testImage.length);
-      expect(Buffer.from(result)).to.eql(expectedImage);
-    });
+    const result = toRGBAArray(canvas);
+    expect(Buffer.from(result).length).to.equal(testImage.length);
+    expect(Buffer.from(result)).to.eql(expectedImage);
   });
 
   it('will work with a PNG image', function () {
@@ -51,9 +50,8 @@ describe('to-rgba-array', function () {
 
     var png = new PNG({ width: 3, height: 3 });
     png.data = testImage;
-    return toRGBAArray(PNG.sync.write(png)).then(function (result) {
-      expect(Buffer.from(result).length).to.equal(testImage.length);
-      expect(Buffer.from(result)).to.eql(expectedImage);
-    });
+    const result = toRGBAArray(PNG.sync.write(png));
+    expect(Buffer.from(result).length).to.equal(testImage.length);
+    expect(Buffer.from(result)).to.eql(expectedImage);
   });
 });
