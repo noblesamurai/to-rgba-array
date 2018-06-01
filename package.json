@@ -1,5 +1,5 @@
 {
-  "name": "to-rgba-array",
+  "name": "@noblesam/to-rgba-array",
   "description": "Convert a variety of formats to an rgba array.",
   "version": "2.0.0",
   "author": "Tim Allen <tim@noblesamurai.com>",
@@ -30,10 +30,10 @@
     "image-type": "^3.0.0"
   },
   "peerDependencies": {
-    "canvas": "*"
+    "@noblesam/canvas": "*"
   },
   "devDependencies": {
-    "canvas": "^1.6.2",
+    "@noblesam/canvas": "*",
     "chai": "~3.5.0",
     "jsdoc-to-markdown": "^2.0.1",
     "lodash.range": "^3.2.0",

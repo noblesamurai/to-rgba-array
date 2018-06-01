@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const toRGBAArray = require('..');
-const Canvas = require('canvas');
+const Canvas = require('@noblesam/canvas');
 const PNG = require('pngjs').PNG;
 const ImageData = Canvas.ImageData;
 

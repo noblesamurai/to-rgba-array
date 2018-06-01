@@ -1,7 +1,7 @@
 /**
  * @module to-rgba-array
  */
-const Canvas = require('canvas');
+const Canvas = require('@noblesam/canvas');
 
 const getCanvasPixels = require('get-canvas-pixels');
 const imageType = require('image-type');
