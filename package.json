@@ -1,7 +1,7 @@
 {
   "name": "to-rgba-array",
   "description": "Convert a variety of formats to an rgba array.",
-  "version": "2.0.0",
+  "version": "2.1.0-raw.0",
   "author": "Tim Allen <tim@noblesamurai.com>",
   "license": "BSD-3-Clause",
   "main": "index.js",
