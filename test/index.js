@@ -54,4 +54,12 @@ describe('to-rgba-array', function () {
     expect(Buffer.from(result).length).to.equal(testImage.length);
     expect(Buffer.from(result)).to.eql(expectedImage);
   });
+
+  it('will work with a RAW image that looks like a BMP file', function () {
+    const rawImage = Buffer.from([ 66, 77, 39, 255, 77, 88, 50, 255, 86, 97, 59, 255 ]);
+    // should not throw an Error: Image given has not completed loading
+    const result = toRGBAArray(rawImage, 'raw');
+    expect(Buffer.from(result).length).to.equal(rawImage.length);
+    expect(Buffer.from(result)).to.deep.equal(rawImage);
+  });
 });
